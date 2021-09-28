@@ -4,7 +4,7 @@ using UnityEngine.Playables;
 using KartGame.KartSystems;
 using UnityEngine.SceneManagement;
 
-public enum GameState{Play, Won, Lost}
+public enum GameState{Play, Won, Lost};
 
 public class GameFlowManager : MonoBehaviour
 {
@@ -50,6 +50,10 @@ public class GameFlowManager : MonoBehaviour
 
     void Start()
     {
+
+        //ArcadeKart myKart = new ArcadeKart();                
+        //Debug.Log(myKart.baseStats.Grip);
+
         if (autoFindKarts)
         {
             karts = FindObjectsOfType<ArcadeKart>();
