@@ -14,6 +14,7 @@ public abstract class Objective : MonoBehaviour
     [Tooltip("Which game mode are you playing?")]
     public GameMode gameMode;
 
+    //JF why protected?
     protected int m_PickupTotal;
 
     [Tooltip("Name of the target object the player will collect/crash/complete for this objective")]
@@ -37,8 +38,11 @@ public abstract class Objective : MonoBehaviour
     [Tooltip("If there is a time limit, how long in secs?")]
     public int totalTimeInSecs;
     public bool isCompleted { get; protected set; }
+
+    //JF find out what this means
     public bool isBlocking() => !(isOptional || isCompleted);
 
+    //JF find out what this means (delegate, generics)
     public UnityAction<UnityActionUpdateObjective> onUpdateObjective;
 
     protected NotificationHUDManager m_NotificationHUDManager;
