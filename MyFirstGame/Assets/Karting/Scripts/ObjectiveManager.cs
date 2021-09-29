@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ObjectiveManager : MonoBehaviour
 {
-    List<Objective> m_Objectives = new List<Objective>();
+    //JF lookup instantiating vs declaring
+    //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer
+    private List<Objective> m_Objectives = new List<Objective>();
 
+    //JF find out what => means here, why not =?
     public List<Objective> Objectives => m_Objectives;
 
     public static Action<Objective> RegisterObjective;
