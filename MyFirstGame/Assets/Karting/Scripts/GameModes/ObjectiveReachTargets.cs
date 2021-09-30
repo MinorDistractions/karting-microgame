@@ -37,10 +37,14 @@ public class ObjectiveReachTargets : Objective
     {
 
         if (isCompleted)
+        {
             return;
-        
-        if (mustCollectAllPickups) 
+        }
+
+        if (mustCollectAllPickups)
+        {
             pickupsToCompleteObjective = NumberOfPickupsTotal;
+        }
 
         m_PickupTotal = NumberOfPickupsTotal - remaining;
         int targetRemaining = mustCollectAllPickups ? remaining : pickupsToCompleteObjective - m_PickupTotal;

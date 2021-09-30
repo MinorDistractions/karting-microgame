@@ -39,7 +39,7 @@ public abstract class Objective : MonoBehaviour
     public int totalTimeInSecs;
     public bool isCompleted { get; protected set; }
 
-    //JF find out what this means
+    //expression-bodied method. Essentially a method in one line 
     public bool isBlocking() => !(isOptional || isCompleted);
 
     //JF find out what this means (delegate, generics)
