@@ -13,8 +13,6 @@ public class ObjectiveReachTargets : Objective
     [Header("Notification")]
     [Tooltip("Start sending notification about remaining pickups when this amount of pickups is left")]
     public int notificationPickupsRemainingThreshold = 1;
-    
-    
 
     IEnumerator Start()
     {

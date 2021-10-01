@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+// Holds a list of the current objectives (which are added at the start) 
+// Checks if all objectives are complete (gameflow manager checks each fame and ends game if true)
+// Adds objectives as they register at the start, not sure if new objectives can be added during gameplay
 
 public class ObjectiveManager : MonoBehaviour
 {
-    //JF lookup instantiating vs declaring
-    //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer
+
     private List<Objective> m_Objectives = new List<Objective>();
 
-    //JF find out what => means here, why not =?
+    //JF find out what => means here, why not = ?
     public List<Objective> Objectives => m_Objectives;
 
     public static Action<Objective> RegisterObjective;
@@ -39,6 +41,7 @@ public class ObjectiveManager : MonoBehaviour
 
     public void OnRegisterObjective(Objective objective)
     {
+        //Debug.Log($"Registerd {this}");
         m_Objectives.Add(objective);
     }
 }
