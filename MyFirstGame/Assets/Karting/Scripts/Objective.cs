@@ -39,7 +39,8 @@ public abstract class Objective : MonoBehaviour
     public int totalTimeInSecs;
     public bool isCompleted { get; protected set; }
 
-    //expression-bodied method. Essentially a method in one line 
+    //JF expression-bodied method. Essentially a method in one line 
+    //JF isBlocking() is used to check if an objective is not optional and is uncompleted, if true it still needs to be completed
     public bool isBlocking() => !(isOptional || isCompleted);
 
     //JF find out what this means (delegate, generics)

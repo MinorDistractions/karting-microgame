@@ -29,6 +29,9 @@ public class InGameMenuManager : MonoBehaviour
 
         menuRoot.SetActive(false);
 
+        //JF set shadows off by default - seems to improve framerate
+        QualitySettings.shadows = ShadowQuality.Disable;
+
         shadowsToggle.isOn = QualitySettings.shadows != ShadowQuality.Disable;
         shadowsToggle.onValueChanged.AddListener(OnShadowsChanged);
 
