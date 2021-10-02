@@ -18,6 +18,10 @@ public class ArcadeKartPowerup : MonoBehaviour {
     public UnityEvent onPowerupActivated;
     public UnityEvent onPowerupFinishCooldown;
 
+    //JF should infer the base material and only need to know what the cooldown material needs to be
+    public Material m_Material;
+    public Material coolDownMaterial;
+
     private void Awake()
     {
         lastActivatedTimestamp = -9999f;
@@ -30,10 +34,21 @@ public class ArcadeKartPowerup : MonoBehaviour {
 
             if (Time.time - lastActivatedTimestamp > cooldown) {
                 //finished cooldown!
+                SetChildMaterials(m_Material);
                 isCoolingDown = false;
                 onPowerupFinishCooldown.Invoke();
+                
             }
+        }
+    }
 
+    private void SetChildMaterials(Material mat)
+    {
+        int numOfChildren = transform.childCount;
+        for (int i = 0; i < numOfChildren; i++)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+            child.GetComponent<Renderer>().material = mat;
         }
     }
 
@@ -52,6 +67,7 @@ public class ArcadeKartPowerup : MonoBehaviour {
                 lastActivatedTimestamp = Time.time;
                 kart.AddPowerup(this.boostStats);
                 onPowerupActivated.Invoke();
+                SetChildMaterials(coolDownMaterial);
                 isCoolingDown = true;
 
                 if (disableGameObjectWhenActivated) this.gameObject.SetActive(false);
