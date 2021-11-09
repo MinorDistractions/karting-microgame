@@ -28,7 +28,6 @@ public class DisplayMessage : MonoBehaviour
         
         DebugUtility.HandleErrorIfNullFindObject<DisplayMessageManager, DisplayMessage>(m_DisplayMessageManager, this);
 
-
         m_WasDisplayed = false;
     }
 
@@ -37,25 +36,20 @@ public class DisplayMessage : MonoBehaviour
     {
         if (!autoDisplayOnAwake) return;
         if (m_WasDisplayed) return;
-        
 
         if (Time.time - m_InitTime > delayBeforeShowing) Display();
-        
     }
-    
+
     public void Display()
     {
-        notification = messagePrefab.getObject(true,m_DisplayMessageManager.DisplayMessageRect.transform).GetComponent<NotificationToast>();
-        
+        notification = messagePrefab.getObject(true, m_DisplayMessageManager.DisplayMessageRect.transform).GetComponent<NotificationToast>();
+
         notification.Initialize(message);
-        
+
         m_DisplayMessageManager.DisplayMessageRect.UpdateTable(notification.gameObject);
 
         m_WasDisplayed = true;
 
-        StartCoroutine(messagePrefab.ReturnWithDelay(notification.gameObject,notification.TotalRunTime));
-
+        StartCoroutine(messagePrefab.ReturnWithDelay(notification.gameObject, notification.TotalRunTime));
     }
-
-   
 }

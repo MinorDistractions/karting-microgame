@@ -83,11 +83,14 @@ public class GameFlowManager : MonoBehaviour
 
         //run race countdown animation
         ShowRaceCountdownAnimation();
+
+        //JF: The pop ups at the start
         StartCoroutine(ShowObjectivesRoutine());
 
+        //JF: Start the race after 3 seconds (roughly the length of the animation)
         StartCoroutine(CountdownThenStartRaceRoutine());
     }
-
+    
     IEnumerator CountdownThenStartRaceRoutine() {
         yield return new WaitForSeconds(3f);
         StartRace();

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+//JF: A Toast is a non modal, unobtrusive window element used to display brief, auto-expiring windows of information to a user. 
 public class NotificationToast : MonoBehaviour
 {
     [Tooltip("Text content that will display the notification text")]
@@ -15,8 +15,6 @@ public class NotificationToast : MonoBehaviour
 
     float m_InitTime;
     bool m_WasInit;
-
-    
     
     public float TotalRunTime => visibleDuration + fadeInDuration + fadeOutDuration;
 

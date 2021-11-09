@@ -4191,7 +4191,7 @@ PrefabInstance:
     - target: {fileID: 6435499550973355432, guid: 0cfd46575c9fef94e94a772755910886,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6435499550973355432, guid: 0cfd46575c9fef94e94a772755910886,
         type: 3}
@@ -4241,6 +4241,11 @@ PrefabInstance:
     - target: {fileID: 6435499550973355432, guid: 0cfd46575c9fef94e94a772755910886,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435499550973355433, guid: 0cfd46575c9fef94e94a772755910886,
+        type: 3}
+      propertyPath: autoDisplayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11495,7 +11500,7 @@ PrefabInstance:
     - target: {fileID: 1957102644646649599, guid: ca718117a11f745b292c7dba21f42c00,
         type: 3}
       propertyPath: onPowerupActivated.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1957102644646649599, guid: ca718117a11f745b292c7dba21f42c00,
         type: 3}
@@ -16788,7 +16793,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1650421504 stripped
 Transform:
@@ -18735,6 +18740,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3368944771209025263, guid: 9982527ae59625f4db19031743e8e79d,
+        type: 3}
+      propertyPath: isTimed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3368944771209025263, guid: 9982527ae59625f4db19031743e8e79d,
         type: 3}

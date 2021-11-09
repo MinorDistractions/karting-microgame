@@ -44,10 +44,12 @@ public class ArcadeKartPowerup : MonoBehaviour {
 
     private void SetChildMaterials(Material mat)
     {
+        GameObject child;
         int numOfChildren = transform.childCount;
+
         for (int i = 0; i < numOfChildren; i++)
         {
-            GameObject child = transform.GetChild(i).gameObject;
+            child = transform.GetChild(i).gameObject;
             child.GetComponent<Renderer>().material = mat;
         }
     }
